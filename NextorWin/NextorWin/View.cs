@@ -16,8 +16,6 @@ namespace NextorWin
 {
     public partial class View : Form
     {
-        private int mag = 0;
-
         /// 좌상단 포인트
         private Point leftTopPoint = new Point(0, 0);
 

@@ -63,6 +63,46 @@ namespace NextorWin.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap app_1646211_640 {
+            get {
+                object obj = ResourceManager.GetObject("app-1646211_640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap app_1646212_640 {
+            get {
+                object obj = ResourceManager.GetObject("app-1646212_640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap app_1646215_640 {
+            get {
+                object obj = ResourceManager.GetObject("app-1646215_640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap app_1646217_640 {
+            get {
+                object obj = ResourceManager.GetObject("app-1646217_640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap btnAutoFit {
             get {
                 object obj = ResourceManager.GetObject("btnAutoFit", resourceCulture);
@@ -353,6 +393,26 @@ namespace NextorWin.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap floppy_disk {
+            get {
+                object obj = ResourceManager.GetObject("floppy-disk", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap folder {
+            get {
+                object obj = ResourceManager.GetObject("folder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap inspectionMode_a {
             get {
                 object obj = ResourceManager.GetObject("inspectionMode_a", resourceCulture);
@@ -406,6 +466,16 @@ namespace NextorWin.Properties {
         internal static System.Drawing.Bitmap subTitle {
             get {
                 object obj = ResourceManager.GetObject("subTitle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap subTitle1 {
+            get {
+                object obj = ResourceManager.GetObject("subTitle1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -556,6 +626,16 @@ namespace NextorWin.Properties {
         internal static System.Drawing.Bitmap viewTitle {
             get {
                 object obj = ResourceManager.GetObject("viewTitle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap viewTitle1 {
+            get {
+                object obj = ResourceManager.GetObject("viewTitle1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

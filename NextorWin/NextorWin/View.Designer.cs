@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.txtRatio = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -48,7 +49,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSave = new System.Windows.Forms.PictureBox();
             this.btnOpen = new System.Windows.Forms.PictureBox();
@@ -57,9 +57,9 @@
             this.btnAutofit = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOpen)).BeginInit();
@@ -82,6 +82,16 @@
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.btnSave);
+            this.groupBox5.Controls.Add(this.btnOpen);
+            this.groupBox5.Location = new System.Drawing.Point(6, 55);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(188, 90);
+            this.groupBox5.TabIndex = 18;
+            this.groupBox5.TabStop = false;
+            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.txtRatio);
@@ -102,8 +112,9 @@
             this.txtRatio.Location = new System.Drawing.Point(6, 131);
             this.txtRatio.Name = "txtRatio";
             this.txtRatio.ReadOnly = true;
-            this.txtRatio.Size = new System.Drawing.Size(176, 21);
+            this.txtRatio.Size = new System.Drawing.Size(47, 21);
             this.txtRatio.TabIndex = 8;
+            this.txtRatio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox3
             // 
@@ -226,6 +237,7 @@
             // 
             // ctrl_ScrollPictureBox1
             // 
+            this.ctrl_ScrollPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ctrl_ScrollPictureBox1.Location = new System.Drawing.Point(218, 15);
             this.ctrl_ScrollPictureBox1.Name = "ctrl_ScrollPictureBox1";
             this.ctrl_ScrollPictureBox1.Size = new System.Drawing.Size(1034, 815);
@@ -248,19 +260,9 @@
             // 
             this.saveFileDialog.Filter = "Picture Files|*.bmp;*.jpg;*.gif;*.png;*.tif|All Files|*.*";
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.btnSave);
-            this.groupBox5.Controls.Add(this.btnOpen);
-            this.groupBox5.Location = new System.Drawing.Point(6, 55);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(188, 90);
-            this.groupBox5.TabIndex = 18;
-            this.groupBox5.TabStop = false;
-            // 
             // pictureBox2
             // 
-            this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
+            this.pictureBox2.BackgroundImage = global::NextorWin.Properties.Resources.viewTitle1;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox2.Location = new System.Drawing.Point(12, 12);
             this.pictureBox2.Name = "pictureBox2";
@@ -294,6 +296,7 @@
             // 
             this.btnZoomout.BackgroundImage = global::NextorWin.Properties.Resources.btnZoomout;
             this.btnZoomout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnZoomout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnZoomout.Location = new System.Drawing.Point(6, 94);
             this.btnZoomout.Name = "btnZoomout";
             this.btnZoomout.Size = new System.Drawing.Size(176, 31);
@@ -306,6 +309,7 @@
             // 
             this.btnZoomin.BackgroundImage = global::NextorWin.Properties.Resources.btnZoomin;
             this.btnZoomin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnZoomin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnZoomin.Location = new System.Drawing.Point(6, 57);
             this.btnZoomin.Name = "btnZoomin";
             this.btnZoomin.Size = new System.Drawing.Size(176, 31);
@@ -318,6 +322,7 @@
             // 
             this.btnAutofit.BackgroundImage = global::NextorWin.Properties.Resources.btnAutoFit;
             this.btnAutofit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAutofit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAutofit.Location = new System.Drawing.Point(6, 20);
             this.btnAutofit.Name = "btnAutofit";
             this.btnAutofit.Size = new System.Drawing.Size(176, 31);
@@ -328,7 +333,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImage = global::NextorWin.Properties.Resources.subTitle1;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pictureBox1.Location = new System.Drawing.Point(22, 20);
             this.pictureBox1.Name = "pictureBox1";
@@ -356,11 +361,11 @@
             this.Load += new System.EventHandler(this.View_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnSave)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnOpen)).EndInit();

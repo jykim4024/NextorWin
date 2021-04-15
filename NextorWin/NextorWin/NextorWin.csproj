@@ -100,6 +100,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Detail View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detail View.Designer.cs">
+      <DependentUpon>Detail View.cs</DependentUpon>
+    </Compile>
     <Compile Include="InspectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <Compile Include="View.Designer.cs">
       <DependentUpon>View.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Detail View.resx">
+      <DependentUpon>Detail View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InspectionForm.resx">
       <DependentUpon>InspectionForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -311,6 +320,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\new\check-24849_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\floppy-disk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\new\app-1646212_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\new\app-1646211_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\new\app-1646215_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\new\app-1646217_640.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

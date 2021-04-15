@@ -49,8 +49,15 @@ namespace NextorWin
             DialogResult result = MessageBox.Show("Closing This Form?", "System Info", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
-                Application.ExitThread();
-                Environment.Exit(0);
+                try
+                {
+                    Application.ExitThread();
+                    Environment.Exit(0);
+                }
+                catch
+                {
+                    Console.WriteLine("Exception!");
+                }
             }
             else
             {
@@ -79,7 +86,7 @@ namespace NextorWin
         {
             StringBuilder stringBuilder1 = new StringBuilder();
 
-            string filePath = "../../results/";
+            string filePath = "../../../results/";
             string fileName = "Image_1.png";
 
             stringBuilder1.Append(filePath);

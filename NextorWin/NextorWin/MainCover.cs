@@ -103,8 +103,15 @@ namespace NextorWin
             }
             else
             {
-                Application.ExitThread();
-                Environment.Exit(0);
+                try
+                {
+                    Application.ExitThread();
+                    Environment.Exit(0);
+                }
+                catch
+                {
+                    Console.WriteLine("Exception!");
+                }
             }
         }
     }

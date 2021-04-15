@@ -45,8 +45,15 @@ namespace NextorWin
             DialogResult result = MessageBox.Show("Closing This Form?", "System Info", MessageBoxButtons.OKCancel);
             if (result == DialogResult.OK)
             {
-                Application.ExitThread();
-                Environment.Exit(0);
+                try
+                {
+                    Application.ExitThread();
+                    Environment.Exit(0);
+                }
+                catch
+                {
+                    Console.WriteLine("Exception!");
+                }
             }
             else
             {
@@ -72,11 +79,14 @@ namespace NextorWin
         {
             StringBuilder stringBuilder1 = new StringBuilder();
 
-            string filePath = "../../results/";
+            string filePath = "../../../results/";
             string fileName = "image1.jpg";
 
             stringBuilder1.Append(filePath);
             stringBuilder1.Append(fileName);
+
+            pictureBox1.Load(stringBuilder1.ToString());
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
 
             btnStop.Enabled = false;
             btnDetail.Enabled = false;
@@ -153,7 +163,8 @@ namespace NextorWin
         {
             btnDetail.BackgroundImage = NextorWin.Properties.Resources.button_220_57_detail;
 
-            View viewM = new View();
+            //View viewM = new View();
+            Detail_View viewM = new Detail_View();
             viewM.ShowDialog();
         }
 
