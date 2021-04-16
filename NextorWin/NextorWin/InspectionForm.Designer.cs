@@ -44,6 +44,10 @@
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnCam4 = new System.Windows.Forms.Button();
+            this.btnCam3 = new System.Windows.Forms.Button();
+            this.btnCam2 = new System.Windows.Forms.Button();
+            this.btnCam1 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnStop)).BeginInit();
@@ -52,6 +56,7 @@
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultBox)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -108,6 +113,7 @@
             // 
             this.btnStop.BackgroundImage = global::NextorWin.Properties.Resources.button_220_57_stop_d;
             this.btnStop.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStop.Location = new System.Drawing.Point(457, 13);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(171, 46);
@@ -120,6 +126,7 @@
             // 
             this.btnStart.BackgroundImage = global::NextorWin.Properties.Resources.button_220_57_start;
             this.btnStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnStart.Location = new System.Drawing.Point(280, 13);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(171, 46);
@@ -181,6 +188,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCam4);
+            this.groupBox2.Controls.Add(this.btnCam3);
+            this.groupBox2.Controls.Add(this.btnCam2);
+            this.groupBox2.Controls.Add(this.btnCam1);
             this.groupBox2.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
             this.groupBox2.Location = new System.Drawing.Point(99, 830);
@@ -219,6 +230,50 @@
             this.pictureBox1.TabIndex = 22;
             this.pictureBox1.TabStop = false;
             // 
+            // btnCam4
+            // 
+            this.btnCam4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCam4.Location = new System.Drawing.Point(249, 140);
+            this.btnCam4.Name = "btnCam4";
+            this.btnCam4.Size = new System.Drawing.Size(75, 23);
+            this.btnCam4.TabIndex = 8;
+            this.btnCam4.Text = "CAM4";
+            this.btnCam4.UseVisualStyleBackColor = true;
+            this.btnCam4.Click += new System.EventHandler(this.btnCam4_Click);
+            // 
+            // btnCam3
+            // 
+            this.btnCam3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCam3.Location = new System.Drawing.Point(168, 140);
+            this.btnCam3.Name = "btnCam3";
+            this.btnCam3.Size = new System.Drawing.Size(75, 23);
+            this.btnCam3.TabIndex = 7;
+            this.btnCam3.Text = "CAM3";
+            this.btnCam3.UseVisualStyleBackColor = true;
+            this.btnCam3.Click += new System.EventHandler(this.btnCam3_Click);
+            // 
+            // btnCam2
+            // 
+            this.btnCam2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCam2.Location = new System.Drawing.Point(87, 140);
+            this.btnCam2.Name = "btnCam2";
+            this.btnCam2.Size = new System.Drawing.Size(75, 23);
+            this.btnCam2.TabIndex = 6;
+            this.btnCam2.Text = "CAM2";
+            this.btnCam2.UseVisualStyleBackColor = true;
+            this.btnCam2.Click += new System.EventHandler(this.btnCam2_Click);
+            // 
+            // btnCam1
+            // 
+            this.btnCam1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCam1.Location = new System.Drawing.Point(6, 140);
+            this.btnCam1.Name = "btnCam1";
+            this.btnCam1.Size = new System.Drawing.Size(75, 23);
+            this.btnCam1.TabIndex = 5;
+            this.btnCam1.Text = "CAM1";
+            this.btnCam1.UseVisualStyleBackColor = true;
+            this.btnCam1.Click += new System.EventHandler(this.btnCam1_Click);
+            // 
             // InspectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -247,6 +302,7 @@
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.resultBox)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -271,5 +327,9 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button btnCam4;
+        private System.Windows.Forms.Button btnCam3;
+        private System.Windows.Forms.Button btnCam2;
+        private System.Windows.Forms.Button btnCam1;
     }
 }

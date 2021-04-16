@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using OpenCvSharp;
+//using OpenCvSharp;
+using RabbitMQ.Client;
+using RabbitMQ.Client.Events;
 
 namespace NextorWin
 {
     public partial class TrainForm : Form
     {
-        Mat image = new Mat();
+        //Mat image = new Mat();
 
         private Timer timer;
         private Timer timer1;
@@ -25,6 +27,21 @@ namespace NextorWin
 
         private int coverIndex = 0;
         private int mode = 0;  // training mode
+
+        // config
+        private string UserName;
+        private string Password;
+        private string HostName;
+        private int Port;
+        private string VirtualHost;
+        private string cam1_ex;
+        private string cam1_rk;
+        private string cam2_ex;
+        private string cam2_rk;
+        private string cam3_ex;
+        private string cam3_rk;
+        private string cam4_ex;
+        private string cam4_rk;
 
         public TrainForm()
         {
@@ -42,6 +59,66 @@ namespace NextorWin
             coverTimer = new Timer();
             coverTimer.Interval = 500;
             coverTimer.Tick += new EventHandler(coverTimer_Tick);
+
+            IniFile config = new IniFile();
+            config.Load("../../../config/config.ini");
+            UserName = config["MQ"]["UserName"].ToString();
+            Password = config["MQ"]["Password"].ToString();
+            HostName = config["MQ"]["HostName"].ToString();
+            Port = config["MQ"]["Port"].ToInt();
+            VirtualHost = config["MQ"]["VirtualHost"].ToString();
+            cam1_ex = config["MQ"]["cam1_ex"].ToString();
+            cam1_rk = config["MQ"]["cam1_rk"].ToString();
+            cam2_ex = config["MQ"]["cam2_ex"].ToString();
+            cam2_rk = config["MQ"]["cam2_rk"].ToString();
+            cam3_ex = config["MQ"]["cam3_ex"].ToString();
+            cam3_rk = config["MQ"]["cam3_rk"].ToString();
+            cam4_ex = config["MQ"]["cam4_ex"].ToString();
+            cam4_rk = config["MQ"]["cam4_rk"].ToString();
+        }
+
+        /// <summary>
+        /// MQ Send function
+        /// </summary>
+        /// <param name="Cam">카메라번호</param>
+        /// <param name="body">메시지</param>
+        private void mqSend(string Cam, string body)
+        {
+            var connectionFactory = new RabbitMQ.Client.ConnectionFactory()
+            {
+                UserName = UserName,
+                Password = Password,
+                HostName = HostName,
+                Port = Port,
+                VirtualHost = VirtualHost
+            };
+
+            var connection = connectionFactory.CreateConnection();
+            var model = connection.CreateModel();
+
+            var properties = model.CreateBasicProperties();
+            properties.Persistent = false;
+
+            if (Cam == "C1")
+            {
+                byte[] messagebuffer = Encoding.Default.GetBytes(body);
+                model.BasicPublish(cam1_ex, cam1_rk, properties, messagebuffer);
+            }
+            else if (Cam == "C2")
+            {
+                byte[] messagebuffer = Encoding.Default.GetBytes(body);
+                model.BasicPublish(cam2_ex, cam2_rk, properties, messagebuffer);
+            }
+            else if (Cam == "C3")
+            {
+                byte[] messagebuffer = Encoding.Default.GetBytes(body);
+                model.BasicPublish(cam3_ex, cam3_rk, properties, messagebuffer);
+            }
+            else if (Cam == "C4")
+            {
+                byte[] messagebuffer = Encoding.Default.GetBytes(body);
+                model.BasicPublish(cam4_ex, cam4_rk, properties, messagebuffer);
+            }
         }
 
         private void TrainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -229,6 +306,30 @@ namespace NextorWin
                     picCover.BackgroundImage = NextorWin.Properties.Resources.cover_t_3;
                 }
             }
+        }
+
+        private void btnCam1_Click(object sender, EventArgs e)
+        {
+            string body = "c1_0000001.bin";
+            mqSend("C1", body);
+        }
+
+        private void btnCam2_Click(object sender, EventArgs e)
+        {
+            string body = "c2_0000001.bin";
+            mqSend("C2", body);
+        }
+
+        private void btnCam3_Click(object sender, EventArgs e)
+        {
+            string body = "c3_0000001.bin";
+            mqSend("C3", body);
+        }
+
+        private void btnCam4_Click(object sender, EventArgs e)
+        {
+            string body = "c4_0000001.bin";
+            mqSend("C4", body);
         }
     }
 }

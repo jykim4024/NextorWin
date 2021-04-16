@@ -49,6 +49,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
+            this.btnCam1 = new System.Windows.Forms.Button();
+            this.btnCam2 = new System.Windows.Forms.Button();
+            this.btnCam3 = new System.Windows.Forms.Button();
+            this.btnCam4 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -159,6 +163,10 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCam4);
+            this.groupBox1.Controls.Add(this.btnCam3);
+            this.groupBox1.Controls.Add(this.btnCam2);
+            this.groupBox1.Controls.Add(this.btnCam1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Control;
@@ -275,6 +283,50 @@
             this.pictureBox10.TabIndex = 20;
             this.pictureBox10.TabStop = false;
             // 
+            // btnCam1
+            // 
+            this.btnCam1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCam1.Location = new System.Drawing.Point(6, 140);
+            this.btnCam1.Name = "btnCam1";
+            this.btnCam1.Size = new System.Drawing.Size(75, 23);
+            this.btnCam1.TabIndex = 1;
+            this.btnCam1.Text = "CAM1";
+            this.btnCam1.UseVisualStyleBackColor = true;
+            this.btnCam1.Click += new System.EventHandler(this.btnCam1_Click);
+            // 
+            // btnCam2
+            // 
+            this.btnCam2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCam2.Location = new System.Drawing.Point(87, 140);
+            this.btnCam2.Name = "btnCam2";
+            this.btnCam2.Size = new System.Drawing.Size(75, 23);
+            this.btnCam2.TabIndex = 2;
+            this.btnCam2.Text = "CAM2";
+            this.btnCam2.UseVisualStyleBackColor = true;
+            this.btnCam2.Click += new System.EventHandler(this.btnCam2_Click);
+            // 
+            // btnCam3
+            // 
+            this.btnCam3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCam3.Location = new System.Drawing.Point(168, 140);
+            this.btnCam3.Name = "btnCam3";
+            this.btnCam3.Size = new System.Drawing.Size(75, 23);
+            this.btnCam3.TabIndex = 3;
+            this.btnCam3.Text = "CAM3";
+            this.btnCam3.UseVisualStyleBackColor = true;
+            this.btnCam3.Click += new System.EventHandler(this.btnCam3_Click);
+            // 
+            // btnCam4
+            // 
+            this.btnCam4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCam4.Location = new System.Drawing.Point(249, 140);
+            this.btnCam4.Name = "btnCam4";
+            this.btnCam4.Size = new System.Drawing.Size(75, 23);
+            this.btnCam4.TabIndex = 4;
+            this.btnCam4.Text = "CAM4";
+            this.btnCam4.UseVisualStyleBackColor = true;
+            this.btnCam4.Click += new System.EventHandler(this.btnCam4_Click);
+            // 
             // TrainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -347,5 +399,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox picCover;
+        private System.Windows.Forms.Button btnCam4;
+        private System.Windows.Forms.Button btnCam3;
+        private System.Windows.Forms.Button btnCam2;
+        private System.Windows.Forms.Button btnCam1;
     }
 }
