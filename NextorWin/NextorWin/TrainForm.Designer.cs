@@ -30,14 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrainForm));
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.btnTraining = new System.Windows.Forms.PictureBox();
+            this.btnCollection = new System.Windows.Forms.PictureBox();
+            this.picLogo = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.ingBox = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCam4 = new System.Windows.Forms.Button();
+            this.btnCam3 = new System.Windows.Forms.Button();
+            this.btnCam2 = new System.Windows.Forms.Button();
+            this.btnCam1 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.picCover = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -49,14 +53,10 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.btnCam1 = new System.Windows.Forms.Button();
-            this.btnCam2 = new System.Windows.Forms.Button();
-            this.btnCam3 = new System.Windows.Forms.Button();
-            this.btnCam4 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTraining)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCollection)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ingBox)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -75,51 +75,51 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.pictureBox12);
-            this.groupBox3.Controls.Add(this.pictureBox11);
-            this.groupBox3.Controls.Add(this.pictureBox5);
+            this.groupBox3.Controls.Add(this.btnTraining);
+            this.groupBox3.Controls.Add(this.btnCollection);
+            this.groupBox3.Controls.Add(this.picLogo);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1333, 67);
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             // 
-            // pictureBox12
+            // btnTraining
             // 
-            this.pictureBox12.BackgroundImage = global::NextorWin.Properties.Resources.button_220_57_training;
-            this.pictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox12.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox12.Location = new System.Drawing.Point(457, 13);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(171, 46);
-            this.pictureBox12.TabIndex = 2;
-            this.pictureBox12.TabStop = false;
-            this.pictureBox12.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox12_MouseDown);
-            this.pictureBox12.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox12_MouseUp);
+            this.btnTraining.BackgroundImage = global::NextorWin.Properties.Resources.button_220_57_training;
+            this.btnTraining.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnTraining.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTraining.Location = new System.Drawing.Point(457, 13);
+            this.btnTraining.Name = "btnTraining";
+            this.btnTraining.Size = new System.Drawing.Size(171, 46);
+            this.btnTraining.TabIndex = 2;
+            this.btnTraining.TabStop = false;
+            this.btnTraining.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnTraining_MouseDown);
+            this.btnTraining.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnTraining_MouseUp);
             // 
-            // pictureBox11
+            // btnCollection
             // 
-            this.pictureBox11.BackgroundImage = global::NextorWin.Properties.Resources.button_220_57_collection;
-            this.pictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox11.Location = new System.Drawing.Point(280, 13);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(171, 46);
-            this.pictureBox11.TabIndex = 1;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox11_MouseDown);
-            this.pictureBox11.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox11_MouseUp);
+            this.btnCollection.BackgroundImage = global::NextorWin.Properties.Resources.button_220_57_collection;
+            this.btnCollection.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCollection.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCollection.Location = new System.Drawing.Point(280, 13);
+            this.btnCollection.Name = "btnCollection";
+            this.btnCollection.Size = new System.Drawing.Size(171, 46);
+            this.btnCollection.TabIndex = 1;
+            this.btnCollection.TabStop = false;
+            this.btnCollection.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCollection_MouseDown);
+            this.btnCollection.MouseUp += new System.Windows.Forms.MouseEventHandler(this.btnCollection_MouseUp);
             // 
-            // pictureBox5
+            // picLogo
             // 
-            this.pictureBox5.BackgroundImage = global::NextorWin.Properties.Resources.CI_nexcore01;
-            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox5.Location = new System.Drawing.Point(13, 18);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(174, 35);
-            this.pictureBox5.TabIndex = 0;
-            this.pictureBox5.TabStop = false;
+            this.picLogo.BackgroundImage = global::NextorWin.Properties.Resources.CI_nexcore01;
+            this.picLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picLogo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picLogo.Location = new System.Drawing.Point(13, 18);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(174, 35);
+            this.picLogo.TabIndex = 0;
+            this.picLogo.TabStop = false;
             // 
             // groupBox4
             // 
@@ -175,6 +175,50 @@
             this.groupBox1.Size = new System.Drawing.Size(1793, 169);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
+            // 
+            // btnCam4
+            // 
+            this.btnCam4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCam4.Location = new System.Drawing.Point(249, 140);
+            this.btnCam4.Name = "btnCam4";
+            this.btnCam4.Size = new System.Drawing.Size(75, 23);
+            this.btnCam4.TabIndex = 4;
+            this.btnCam4.Text = "CAM4";
+            this.btnCam4.UseVisualStyleBackColor = true;
+            this.btnCam4.Click += new System.EventHandler(this.btnCam4_Click);
+            // 
+            // btnCam3
+            // 
+            this.btnCam3.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCam3.Location = new System.Drawing.Point(168, 140);
+            this.btnCam3.Name = "btnCam3";
+            this.btnCam3.Size = new System.Drawing.Size(75, 23);
+            this.btnCam3.TabIndex = 3;
+            this.btnCam3.Text = "CAM3";
+            this.btnCam3.UseVisualStyleBackColor = true;
+            this.btnCam3.Click += new System.EventHandler(this.btnCam3_Click);
+            // 
+            // btnCam2
+            // 
+            this.btnCam2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCam2.Location = new System.Drawing.Point(87, 140);
+            this.btnCam2.Name = "btnCam2";
+            this.btnCam2.Size = new System.Drawing.Size(75, 23);
+            this.btnCam2.TabIndex = 2;
+            this.btnCam2.Text = "CAM2";
+            this.btnCam2.UseVisualStyleBackColor = true;
+            this.btnCam2.Click += new System.EventHandler(this.btnCam2_Click);
+            // 
+            // btnCam1
+            // 
+            this.btnCam1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnCam1.Location = new System.Drawing.Point(6, 140);
+            this.btnCam1.Name = "btnCam1";
+            this.btnCam1.Size = new System.Drawing.Size(75, 23);
+            this.btnCam1.TabIndex = 1;
+            this.btnCam1.Text = "CAM1";
+            this.btnCam1.UseVisualStyleBackColor = true;
+            this.btnCam1.Click += new System.EventHandler(this.btnCam1_Click);
             // 
             // button1
             // 
@@ -283,50 +327,6 @@
             this.pictureBox10.TabIndex = 20;
             this.pictureBox10.TabStop = false;
             // 
-            // btnCam1
-            // 
-            this.btnCam1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCam1.Location = new System.Drawing.Point(6, 140);
-            this.btnCam1.Name = "btnCam1";
-            this.btnCam1.Size = new System.Drawing.Size(75, 23);
-            this.btnCam1.TabIndex = 1;
-            this.btnCam1.Text = "CAM1";
-            this.btnCam1.UseVisualStyleBackColor = true;
-            this.btnCam1.Click += new System.EventHandler(this.btnCam1_Click);
-            // 
-            // btnCam2
-            // 
-            this.btnCam2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCam2.Location = new System.Drawing.Point(87, 140);
-            this.btnCam2.Name = "btnCam2";
-            this.btnCam2.Size = new System.Drawing.Size(75, 23);
-            this.btnCam2.TabIndex = 2;
-            this.btnCam2.Text = "CAM2";
-            this.btnCam2.UseVisualStyleBackColor = true;
-            this.btnCam2.Click += new System.EventHandler(this.btnCam2_Click);
-            // 
-            // btnCam3
-            // 
-            this.btnCam3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCam3.Location = new System.Drawing.Point(168, 140);
-            this.btnCam3.Name = "btnCam3";
-            this.btnCam3.Size = new System.Drawing.Size(75, 23);
-            this.btnCam3.TabIndex = 3;
-            this.btnCam3.Text = "CAM3";
-            this.btnCam3.UseVisualStyleBackColor = true;
-            this.btnCam3.Click += new System.EventHandler(this.btnCam3_Click);
-            // 
-            // btnCam4
-            // 
-            this.btnCam4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCam4.Location = new System.Drawing.Point(249, 140);
-            this.btnCam4.Name = "btnCam4";
-            this.btnCam4.Size = new System.Drawing.Size(75, 23);
-            this.btnCam4.TabIndex = 4;
-            this.btnCam4.Text = "CAM4";
-            this.btnCam4.UseVisualStyleBackColor = true;
-            this.btnCam4.Click += new System.EventHandler(this.btnCam4_Click);
-            // 
             // TrainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -356,9 +356,9 @@
             this.Load += new System.EventHandler(this.TrainForm_Load);
             this.Resize += new System.EventHandler(this.TrainForm_Resize);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnTraining)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCollection)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ingBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -380,9 +380,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.PictureBox pictureBox12;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox btnTraining;
+        private System.Windows.Forms.PictureBox btnCollection;
+        private System.Windows.Forms.PictureBox picLogo;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.PictureBox ingBox;
         private System.Windows.Forms.GroupBox groupBox2;

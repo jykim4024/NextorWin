@@ -60,6 +60,7 @@ namespace NextorWin
             coverTimer.Interval = 500;
             coverTimer.Tick += new EventHandler(coverTimer_Tick);
 
+            // config 정보 가져오기
             IniFile config = new IniFile();
             config.Load("../../../config/config.ini");
             UserName = config["MQ"]["UserName"].ToString();
@@ -141,24 +142,7 @@ namespace NextorWin
                 e.Cancel = true;
             }
         }
-
-        private void pictureBox11_MouseDown(object sender, MouseEventArgs e)
-        {
-            pictureBox11.BackgroundImage = NextorWin.Properties.Resources.button_220_57_collection_d_;
-        }
-
-        private void pictureBox11_MouseUp(object sender, MouseEventArgs e)
-        {
-            mode = 1;
-
-            pictureBox11.BackgroundImage = NextorWin.Properties.Resources.button_220_57_collection;
-            mainIndex = 1;
-
-            coverTimer.Stop();
-            picCover.Visible = true;
-            coverTimer.Start();
-        }
-
+        
         private void TrainForm_Load(object sender, EventArgs e)
         {
             StringBuilder stringBuilder1 = new StringBuilder();
@@ -186,23 +170,6 @@ namespace NextorWin
         private void TrainForm_Resize(object sender, EventArgs e)
         {
             this.Invalidate();
-        }
-
-        private void pictureBox12_MouseDown(object sender, MouseEventArgs e)
-        {
-            pictureBox12.BackgroundImage = NextorWin.Properties.Resources.button_220_57_training_d;
-        }
-
-        private void pictureBox12_MouseUp(object sender, MouseEventArgs e)
-        {
-            mode = 2;
-
-            pictureBox12.BackgroundImage = NextorWin.Properties.Resources.button_220_57_training;
-            mainIndex = 2;
-
-            coverTimer.Stop();
-            picCover.Visible = true;
-            coverTimer.Start();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -308,28 +275,82 @@ namespace NextorWin
             }
         }
 
+        /// <summary>
+        /// mq send sample - cam1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCam1_Click(object sender, EventArgs e)
         {
             string body = "c1_0000001.bin";
             mqSend("C1", body);
         }
 
+        /// <summary>
+        /// mq send sample - cam2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCam2_Click(object sender, EventArgs e)
         {
             string body = "c2_0000001.bin";
             mqSend("C2", body);
         }
 
+        /// <summary>
+        /// mq send sample - cam3
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCam3_Click(object sender, EventArgs e)
         {
             string body = "c3_0000001.bin";
             mqSend("C3", body);
         }
 
+        /// <summary>
+        /// mq send sample - cam4
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCam4_Click(object sender, EventArgs e)
         {
             string body = "c4_0000001.bin";
             mqSend("C4", body);
+        }
+
+        private void btnCollection_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnCollection.BackgroundImage = NextorWin.Properties.Resources.button_220_57_collection_d_;
+        }
+
+        private void btnCollection_MouseUp(object sender, MouseEventArgs e)
+        {
+            mode = 1;
+
+            btnCollection.BackgroundImage = NextorWin.Properties.Resources.button_220_57_collection;
+            mainIndex = 1;
+
+            coverTimer.Stop();
+            picCover.Visible = true;
+            coverTimer.Start();
+        }
+
+        private void btnTraining_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnTraining.BackgroundImage = NextorWin.Properties.Resources.button_220_57_training_d;
+        }
+
+        private void btnTraining_MouseUp(object sender, MouseEventArgs e)
+        {
+            mode = 2;
+
+            btnTraining.BackgroundImage = NextorWin.Properties.Resources.button_220_57_training;
+            mainIndex = 2;
+
+            coverTimer.Stop();
+            picCover.Visible = true;
+            coverTimer.Start();
         }
     }
 }

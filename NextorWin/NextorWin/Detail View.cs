@@ -20,38 +20,33 @@ namespace NextorWin
         // mouse zoom & image move
         private Point LastPoint;
         private Bitmap img;
-        /// <summary>
-        /// 확대, 축소 비율 Handling
-        /// </summary>
+        // 확대, 축소 비율 Handling
         private double zoomRatio = 1.0F;
-        /// <summary>
-        /// 확대, 축소 이미지를 Handling
-        /// </summary>
+        // 확대, 축소 이미지를 Handling
         private Rectangle imgRect;
-        /// <summary>
-        /// 마우스 포인트를 저장
-        /// </summary>
+        // 마우스 포인트를 저장
         private Point imgPoint;
         private Point clickPoint;
 
         // image ROI & save
-        /// 좌상단 포인트
+        // 좌상단 포인트
         private Point leftTopPoint = new Point(0, 0);
-        /// 드래그 여부
+        // 드래그 여부
         private bool isDragging = false;
-        /// 마지막 포인트
+        // 마지막 포인트
         private Point lastPoint;
-        /// 소스 비트맵
+        // 소스 비트맵
         private Bitmap sourceBitmap = null;
-        /// 타겟 비트맵
+        // 타겟 비트맵
         private Bitmap targetBitmap = null;
-        /// 이미지 스케일
+        // 이미지 스케일
         private float imageScale = 1f;
 
         // 캡쳐관련
         private Bitmap btMain;
         private bool roiView = false;
 
+        // Watermark Text
         private string warterText;
 
         public Detail_View()
@@ -80,20 +75,8 @@ namespace NextorWin
             IniFile config = new IniFile();
             config.Load("../../../config/config.ini");
             warterText = config["Wartermark"]["warterText"].ToString();
+        }
 
-            //getConfig();
-        }
-        /*
-        private void getConfig()
-        {
-            if (File.Exists("../../../config/config.ini"))
-            {
-                StreamReader sr = new StreamReader("../../../config/config.ini");
-                config = sr.ReadLine();
-                sr.Close();
-            }
-        }
-        */
         private Bitmap LoadBitmapUnlocked(string filePath)
         {
             using (Bitmap bitmap = new Bitmap(filePath))
@@ -102,6 +85,11 @@ namespace NextorWin
             }
         }
 
+        /// <summary>
+        /// Mouse Wheel Fuction
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void detailImage_MouseWheel(object sender, MouseEventArgs e)
         {
             int lines = e.Delta * SystemInformation.MouseWheelScrollLines / 120;
@@ -134,13 +122,14 @@ namespace NextorWin
             if (imgRect.Y + imgRect.Height < detailImageBox.Height) imgRect.Y = detailImageBox.Height - imgRect.Height;
 
             txtZoomRatio.Text = "x " + Math.Round(zoomRatio, 3, MidpointRounding.AwayFromZero).ToString();
-            //txtZoomRatio.Text = zoomRatio.ToString();
             this.sourceBitmap = new Bitmap(detailImageBox.Image);
-            //ShowTargetBitmap();
 
             detailImageBox.Invalidate();
         }
 
+        /// <summary>
+        /// 현재 배율의 타켓이미지를 가져오기
+        /// </summary>
         private void ShowTargetBitmap()
         {
             if (this.sourceBitmap == null)
@@ -177,9 +166,7 @@ namespace NextorWin
             }
 
             this.detailImageBox.Image = this.targetBitmap;
-
             this.detailImageBox.Visible = true;
-
             this.detailImageBox.Refresh();
         }
 
@@ -218,9 +205,9 @@ namespace NextorWin
 
         private void detailImageBox_MouseDown(object sender, MouseEventArgs e)
         {
-            //Zoom
             if (e.Button == MouseButtons.Left)
             {
+                //Zoom
                 clickPoint = new Point(e.X, e.Y);
             }
             else if (e.Button == MouseButtons.Right)
@@ -235,33 +222,10 @@ namespace NextorWin
                 this.isDragging = true;
             }
             detailImageBox.Invalidate();
-            /*
-            if (zoomRatio != 1.0)
-            {
-                //Zoom
-                if (e.Button == MouseButtons.Left)
-                {
-                    clickPoint = new Point(e.X, e.Y);
-                }
-                detailImageBox.Invalidate();
-            }
-            else
-            {
-                // ROI
-                Rectangle rectangle = GetSelectionRectangle(true);
-                if (!rectangle.Contains(e.Location))
-                {
-                    return;
-                }
-                this.lastPoint = e.Location;
-                this.isDragging = true;
-            }
-            */
         }
 
         private void detailImageBox_MouseMove(object sender, MouseEventArgs e)
         {
-
             if (e.Button == MouseButtons.Left)
             {
                 imgRect.X = imgRect.X + (int)Math.Round((double)(e.X - clickPoint.X) / 5);
@@ -286,39 +250,6 @@ namespace NextorWin
                 this.detailImageBox.Refresh();
             }
             detailImageBox.Invalidate();
-
-            /*
-            if (zoomRatio != 1.0)
-            {
-                // Zoom
-                if (e.Button == MouseButtons.Left)
-                {
-                    imgRect.X = imgRect.X + (int)Math.Round((double)(e.X - clickPoint.X) / 5);
-                    if (imgRect.X >= 0) imgRect.X = 0;
-                    if (Math.Abs(imgRect.X) >= Math.Abs(imgRect.Width - detailImageBox.Width)) imgRect.X = -(imgRect.Width - detailImageBox.Width);
-                    imgRect.Y = imgRect.Y + (int)Math.Round((double)(e.Y - clickPoint.Y) / 5);
-                    if (imgRect.Y >= 0) imgRect.Y = 0;
-                    if (Math.Abs(imgRect.Y) >= Math.Abs(imgRect.Height - detailImageBox.Height)) imgRect.Y = -(imgRect.Height - detailImageBox.Height);
-                }
-                else
-                {
-                    LastPoint = e.Location;
-                }
-                detailImageBox.Invalidate();
-            }
-            else
-            {
-                // ROI
-                if (!this.isDragging)
-                {
-                    return;
-                }
-                this.leftTopPoint.X += (int)((e.Location.X - this.lastPoint.X) / this.imageScale);
-                this.leftTopPoint.Y += (int)((e.Location.Y - this.lastPoint.Y) / this.imageScale);
-                this.lastPoint = e.Location;
-                this.detailImageBox.Refresh();
-            }
-            */
         }
 
         private void Detail_View_Load(object sender, EventArgs e)
@@ -331,6 +262,11 @@ namespace NextorWin
             this.detailImageBox.Refresh();
         }
 
+        /// <summary>
+        /// Rectangle 영역의 정보 가져오기
+        /// </summary>
+        /// <param name="scaled"></param>
+        /// <returns></returns>
         private Rectangle GetSelectionRectangle(bool scaled)
         {
             int x;
@@ -553,37 +489,46 @@ namespace NextorWin
             {
                 return image;
             }
-
-            /*
-            if (image != null)
-            {
-                Bitmap croppedBitmap = new Bitmap(image);
-                // Rectangle(이미지의 x시작 위치값, 이미지의 y 시작 위치값, 이미지에 새로적용할 width, 이미지에 새로 적용할 height)
-                // 예) size(450,450) > 상단 100, 하단 100 자를때...>> Rectangle(0,100,450,(450-200))
-                croppedBitmap = croppedBitmap.Clone(new Rectangle(0, 100, image.Width, image.Height - 200), System.Drawing.Imaging.PixelFormat.DontCare);
-                return croppedBitmap;
-            }
-            else
-            {
-                return image;
-            }
-            */
         }
 
+        /// <summary>
+        /// 이미지 확정
+        /// ** 이미지 확정 후 다시 이미지 확정 시, btMain.save 에러발생 처리 필요 **
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button2_Click(object sender, EventArgs e)
         {
             btMain = new Bitmap(detailImageBox.Width, detailImageBox.Height);
             Graphics graphics = Graphics.FromImage(btMain);
             graphics.CopyFromScreen(PointToScreen(new Point(this.detailImageBox.Location.X, this.detailImageBox.Location.Y)), new Point(0, 0), this.detailImageBox.Size);
             btMain.Save("temp.png", ImageFormat.Png);
-            detailImageBox.ImageLocation = "temp.png";
+            //detailImageBox.ImageLocation = "temp.png";
+            
+            Bitmap tempImg = new Bitmap("temp.png");
+            detailImageBox.Image = tempImg;
+
+            imgPoint = new Point(detailImageBox.Width / 2, detailImageBox.Height / 2);
+            imgRect = new Rectangle(0, 0, detailImageBox.Width, detailImageBox.Height);
+            zoomRatio = 1.0;
+            clickPoint = imgPoint;
         }
 
+        /// <summary>
+        /// 원본이미지 로드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button3_Click(object sender, EventArgs e)
         {
             detailImageBox.Image = img;
         }
 
+        /// <summary>
+        /// ROI 영역 On
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button4_Click(object sender, EventArgs e)
         {
             int w = Int32.Parse(widthTextBox.Text);
@@ -599,6 +544,11 @@ namespace NextorWin
             button5.Enabled = true;
         }
 
+        /// <summary>
+        /// ROI 영역 Off
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5_Click(object sender, EventArgs e)
         {
             int w = Int32.Parse(widthTextBox.Text);
@@ -650,31 +600,10 @@ namespace NextorWin
                     grp.DrawRectangle(pSmail, raSmall);
                 }
                 return image;
-                /*
-                string realFileFullPath = Path.GetFileName(FileFullPath);
-                string[] sRect = realFileFullPath.Split('_');
-
-                if (sRect.Length >= 5)
-                {
-                    raBig = new Rectangle(sx, sy, ex - sx, ey - sy);
-                    raSmall = new Rectangle(sx2, sy2, ex2 - sx2, ey2 - sy2);
-
-                    using (Graphics grp = Graphics.FromImage(image))
-                    {
-                        Brush bigBrush = new SolidBrush(Color.FromArgb(16, 0, 0, 255));
-                        grp.FillRectangle(bigBrush, raBig);
-
-                        Pen pSmail = new Pen(Color.FromArgb(128, 0, 255, 0), 4);
-                        pSmail.DashStyle = System.Drawing.Drawing2D.DashStyle.Solid;
-                        grp.DrawRectangle(pSmail, raSmall);
-                    }
-                    return image;
-                }
-                */
             }
             catch (Exception e)
             {
-
+                Console.WriteLine("Exception : ", e.Message);
             }
             return image;
         }

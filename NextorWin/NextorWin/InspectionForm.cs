@@ -56,6 +56,7 @@ namespace NextorWin
             timer3.Tick += new EventHandler(timer3_Tick);
             bFail = false;
 
+            // config 정보 가져오기
             IniFile config = new IniFile();
             config.Load("../../../config/config.ini");
             UserName = config["MQ"]["UserName"].ToString();
@@ -240,7 +241,6 @@ namespace NextorWin
         {
             btnDetail.BackgroundImage = NextorWin.Properties.Resources.button_220_57_detail;
 
-            //View viewM = new View();
             Detail_View viewM = new Detail_View();
             viewM.ShowDialog();
         }
@@ -259,24 +259,44 @@ namespace NextorWin
             timer3.Start();
         }
 
+        /// <summary>
+        /// mq send sample - cam1
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCam1_Click(object sender, EventArgs e)
         {
             string body = "c1_0000001.bin";
             mqSend("C1", body);
         }
 
+        /// <summary>
+        /// mq send sample - cam2
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCam2_Click(object sender, EventArgs e)
         {
             string body = "c2_0000001.bin";
             mqSend("C2", body);
         }
 
+        /// <summary>
+        /// mq send sample - cam3
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCam3_Click(object sender, EventArgs e)
         {
             string body = "c3_0000001.bin";
             mqSend("C3", body);
         }
 
+        /// <summary>
+        /// mq send sample - cam4
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnCam4_Click(object sender, EventArgs e)
         {
             string body = "c4_0000001.bin";
