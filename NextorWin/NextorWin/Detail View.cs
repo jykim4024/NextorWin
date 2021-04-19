@@ -199,8 +199,11 @@ namespace NextorWin
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label_X.Text = ((Cursor.Position.X - (this.Location.X + detailImageBox.Location.X + 8)).ToString());
-            label_Y.Text = ((Cursor.Position.Y - (this.Location.Y + detailImageBox.Location.Y + 30)).ToString());
+            int xValue = Cursor.Position.X - (this.Location.X + detailImageBox.Location.X + 8);
+            int yValue = Cursor.Position.Y - (this.Location.Y + detailImageBox.Location.Y + 30);
+
+            label_X.Text = xValue.ToString();
+            label_Y.Text = yValue.ToString();
         }
 
         private void detailImageBox_MouseDown(object sender, MouseEventArgs e)
