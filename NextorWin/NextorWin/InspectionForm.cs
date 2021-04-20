@@ -151,6 +151,8 @@ namespace NextorWin
 
             btnStop.Enabled = true;
             btnStop.BackgroundImage = NextorWin.Properties.Resources.button_220_57_stop;
+            btnDetail.Enabled = false;
+            btnDetail.BackgroundImage = NextorWin.Properties.Resources.button_220_57_detail_d;
         }
 
         private void InspectionForm_Load(object sender, EventArgs e)
